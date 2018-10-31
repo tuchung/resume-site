@@ -86302,19 +86302,19 @@ __WEBPACK_IMPORTED_MODULE_0__components_Icon_vue___default.a.register({"yin-yang
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(1780)
+  __webpack_require__(1793)
 }
 var normalizeComponent = __webpack_require__(9)
 /* script */
 var __vue_script__ = __webpack_require__(1782)
 /* template */
-var __vue_template__ = __webpack_require__(1783)
+var __vue_template__ = __webpack_require__(1795)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-d456e682"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -86347,98 +86347,15 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 1780 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(1781);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(8)("71c0e198", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d456e682\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Navigation.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d456e682\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Navigation.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 1781 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(7)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.content-menu.ui.menu{\n    margin: 10px;\n}\n.contact-modal .ui.modal{\n    top: 5%;\n    left: 30%;\n    width: 40%;\n    height: 90%;\n    overflow: auto;\n}\n.contact-modal .header.contact-header{\n    background-color: #3cade0;\n}\n.close-icon{\n    float: right;\n    cursor: pointer;\n}\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 1780 */,
+/* 1781 */,
 /* 1782 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__navigation_ContactModal__ = __webpack_require__(1796);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__navigation_ContactModal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__navigation_ContactModal__);
 //
 //
 //
@@ -86480,13 +86397,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             active: 'Resume',
-            open: false,
-            content: '',
-            subject: '',
-            success: false,
-            error: false,
-            successMessage: '',
-            errorMessage: '',
             routeItems: [{
                 name: "Resume",
                 href: "/"
@@ -86497,16 +86407,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             contact: {
                 name: "Contact Me"
-            }
+            },
+            modal: false,
+            messageDiv: false,
+            message: ''
         };
     },
 
     methods: {
         isActive: function isActive(name) {
             return this.active === name;
-        },
-        toggle: function toggle() {
-            this.open = !this.open;
         },
         select: function select(name) {
             this.active = name;
@@ -86520,41 +86430,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 }
             }
         },
-        sendEmail: function sendEmail() {
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/mail/send', {
-                subject: this.subject,
-                content: this.content
-            }).then(function (response) {
-                console.log(response);
-            }).catch(function (error) {
-                console.log(error);
-            });
+        toggle: function toggle() {
+            this.modal = !this.modal;
+        },
+        toggleMessage: function toggleMessage(message) {
+            var self = this;
+            this.messageDiv = true;
+            this.message = message;
+
+            setTimeout(function () {
+                self.messageDiv = false;
+            }, 4000);
         }
     },
     mounted: function mounted() {
+        var _this = this;
+
         this.setRoute();
+        this.$on('message', function (message) {
+            _this.toggleMessage(message);
+        });
     },
 
     watch: {
         '$route': function $route(from, to) {
             this.setRoute();
         }
+    },
+    components: {
+        'contact-modal': __WEBPACK_IMPORTED_MODULE_0__navigation_ContactModal___default.a
     }
 });
 
 /***/ }),
-/* 1783 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function(){},staticRenderFns:[]}
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-d456e682", module.exports)
-  }
-}
-
-/***/ }),
+/* 1783 */,
 /* 1784 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -86715,6 +86624,539 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 1790 */,
+/* 1791 */,
+/* 1792 */,
+/* 1793 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(1794);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(8)("3b6dd19f", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d456e682\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Navigation.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-d456e682\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Navigation.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 1794 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.content-menu.ui.menu[data-v-d456e682],.app-message[data-v-d456e682]{\n    margin: 10px;\n}\n.contact-link[data-v-d456e682]{\n    cursor: pointer;\n}\n.fade-enter-active[data-v-d456e682], .fade-leave-active[data-v-d456e682] {\n-webkit-transition: opacity 1s;\ntransition: opacity 1s;\n}\n.fade-enter[data-v-d456e682], .fade-leave-to[data-v-d456e682] {\nopacity: 0;\n}\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 1795 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "sui-menu",
+        { staticClass: "content-menu", attrs: { pointing: "" } },
+        [
+          _vm._l(_vm.routeItems, function(item) {
+            return _c("sui-menu-item", {
+              key: item.name,
+              tag: "router-link",
+              attrs: {
+                active: _vm.isActive(item.name),
+                content: item.name,
+                to: item.href
+              },
+              nativeOn: {
+                click: function($event) {
+                  _vm.select(item.name)
+                }
+              }
+            })
+          }),
+          _vm._v(" "),
+          _c("sui-menu-item", {
+            key: _vm.contact.name,
+            tag: "a",
+            staticClass: "contact-link",
+            attrs: { content: _vm.contact.name },
+            on: {
+              click: function($event) {
+                _vm.toggle()
+              }
+            }
+          })
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _c(
+        "transition",
+        { attrs: { name: "fade" } },
+        [
+          _c("sui-message", {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.messageDiv,
+                expression: "messageDiv"
+              }
+            ],
+            staticClass: "app-message",
+            attrs: { content: _vm.message, positive: "" }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("contact-modal", { attrs: { "external-toggle": _vm.modal } })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-d456e682", module.exports)
+  }
+}
+
+/***/ }),
+/* 1796 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(1797)
+}
+var normalizeComponent = __webpack_require__(9)
+/* script */
+var __vue_script__ = __webpack_require__(1799)
+/* template */
+var __vue_template__ = __webpack_require__(1800)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/navigation/ContactModal.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-242d2ba6", Component.options)
+  } else {
+    hotAPI.reload("data-v-242d2ba6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 1797 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(1798);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(8)("a8bdba6e", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-242d2ba6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ContactModal.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-242d2ba6\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ContactModal.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 1798 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.contact-modal .ui.modal{\n    top: 5%;\n    left: 30%;\n    width: 40%;\n    height: 91%;\n    overflow: auto;\n}\n.contact-modal .header.contact-header{\n    background-color: #3cade0;\n}\n.close-icon{\n    float: right;\n    cursor: pointer;\n}\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 1799 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'Contact-Modal',
+    props: { externalToggle: false },
+    data: function data() {
+        return {
+            open: false,
+            content: '',
+            subject: '',
+            success: false,
+            error: false,
+            successMessage: '',
+            errorMessage: '',
+            sendButton: true,
+            messageDiv: true
+        };
+    },
+
+    methods: {
+        clearFields: function clearFields() {
+            this.subject = '';
+            this.content = '';
+        },
+        toggle: function toggle() {
+            this.open = !this.open;
+        },
+        toggleSend: function toggleSend() {
+            this.sendButton = !this.sendButton;
+        },
+        sendEmail: function sendEmail() {
+            var self = this;
+            this.toggleSend();
+            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/mail/send', {
+                subject: this.subject,
+                content: this.content
+            }).then(function (response) {
+                self.toggleSend();
+                self.clearFields();
+                self.toggle();
+                self.$parent.$emit('message', 'Email Successfully Send.');
+            }).catch(function (error) {
+                console.log(error);
+                self.toggleSend();
+                alert('Error. Fail to Send.');
+            });
+        }
+    },
+    watch: {
+        externalToggle: function externalToggle(oldVal, newVal) {
+            this.toggle();
+        }
+    },
+    mounted: function mounted() {
+        console.log(this.sendButton);
+    }
+});
+
+/***/ }),
+/* 1800 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "sui-modal",
+        {
+          staticClass: "contact-modal",
+          attrs: { size: "mini" },
+          model: {
+            value: _vm.open,
+            callback: function($$v) {
+              _vm.open = $$v
+            },
+            expression: "open"
+          }
+        },
+        [
+          _c(
+            "sui-modal-header",
+            { staticClass: "contact-header" },
+            [
+              _vm._v("\n        Contact Via\n      "),
+              _c("v-icon", {
+                staticClass: "close-icon",
+                attrs: { name: "times-circle", scale: "2" },
+                nativeOn: {
+                  click: function($event) {
+                    _vm.toggle()
+                  }
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "sui-modal-content",
+            [
+              _c(
+                "sui-modal-description",
+                [
+                  _c("sui-header", [_vm._v("By Phone:")]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    [
+                      _c("v-icon", { attrs: { name: "mobile-alt" } }),
+                      _vm._v("  (770) 402-6324\n        ")
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("sui-header", [_vm._v("By Email:")]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    [
+                      _c("v-icon", { attrs: { name: "envelope" } }),
+                      _vm._v("  tuthienchung@gmail.com\n        ")
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("sui-header", [
+                    _vm._v("Or Send Me A Message Directly Here:")
+                  ]),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("div", { staticClass: "ui form" }, [
+                      _c(
+                        "div",
+                        { staticClass: "field" },
+                        [
+                          _c("sui-label", [
+                            _vm._v(
+                              "\n                      Subject\n                  "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("sui-input", {
+                            attrs: { placeholder: "Default: No Subject" },
+                            model: {
+                              value: _vm.subject,
+                              callback: function($$v) {
+                                _vm.subject = $$v
+                              },
+                              expression: "subject"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "field" },
+                        [
+                          _c("sui-label", [
+                            _vm._v(
+                              "\n                      Body\n                  "
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("textarea", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.content,
+                                expression: "content"
+                              }
+                            ],
+                            domProps: { value: _vm.content },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.content = $event.target.value
+                              }
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ])
+                  ])
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "sui-modal-actions",
+            [
+              _c(
+                "sui-button",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.sendButton,
+                      expression: "sendButton"
+                    }
+                  ],
+                  attrs: { positive: "" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.sendEmail()
+                    }
+                  }
+                },
+                [_vm._v("\n        Send\n      ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "sui-button",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: !_vm.sendButton,
+                      expression: "!sendButton"
+                    }
+                  ],
+                  attrs: { loading: "", positive: "", content: "loading" }
+                },
+                [_vm._v("Send")]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-242d2ba6", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

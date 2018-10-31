@@ -12,85 +12,33 @@
         :to="item.href"
         ></router-link>
 
-        <a is="sui-menu-item"
+        <a class="contact-link" is="sui-menu-item"
         :key="contact.name"
         :content="contact.name"
-        @click="toggle"
+        @click="toggle()"
         />
+
     </sui-menu>
-
-
-    <!-- modal -->
-    <sui-modal class='contact-modal' size="mini" v-model="open">
-        <sui-message
-        v-show="success"
-        header="Success"
-        content="{{successMessage}}"
-        />
-        <sui-message
-        v-show="error"
-        header="Fail"
-        content="{{successMessage}}"
-        />
-      <sui-modal-header class="contact-header">
-          Contact Via
-        <v-icon class="close-icon" v-on:click.native="toggle()" name="times-circle" scale="2"/>
-      </sui-modal-header>
-      <sui-modal-content>
-        <sui-modal-description>
-          <sui-header>By Phone:</sui-header>
-          <div>
-              <v-icon name="mobile-alt"/>&nbsp;&nbsp;(770) 402-6324
-          </div>
-          <sui-header>By Email:</sui-header>
-          <div>
-              <v-icon name="envelope"/>&nbsp;&nbsp;tuthienchung@gmail.com
-          </div>
-          <sui-header>Or Send Me A Message Directly Here:</sui-header>
-          <div>
-              <div class="ui form">
-                <div class="field">
-                    <sui-label>
-                        Subject
-                    </sui-label>
-                    <sui-input v-model="subject" placeholder="Default: No Subject" />
-                </div>
-                <div class="field">
-                    <sui-label>
-                        Body
-                    </sui-label>
-                    <textarea v-model="content"></textarea>
-                </div>
-              </div>
-          </div>
-
-        </sui-modal-description>
-      </sui-modal-content>
-      <sui-modal-actions>
-        <sui-button positive @click.native="sendEmail()">
-          Send
-        </sui-button>
-      </sui-modal-actions>
-    </sui-modal>
-
+    <transition name="fade">
+    <sui-message
+            v-show="messageDiv"
+            class="app-message"
+            :content="message"
+            positive
+    />
+    </transition>
+    <contact-modal :external-toggle="modal"/>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import Modal from './navigation/ContactModal';
 
 export default {
   name: 'Navigation',
   data() {
     return {
       active: 'Resume',
-      open: false,
-      content: '',
-      subject: '',
-      success: false,
-      error: false,
-      successMessage: '',
-      errorMessage: '',
       routeItems:
           [
               {
@@ -106,14 +54,14 @@ export default {
       contact:{
           name: "Contact Me"
       },
+      modal: false,
+      messageDiv: false,
+      message: ''
     };
   },
   methods: {
     isActive(name) {
       return this.active === name;
-    },
-    toggle() {
-      this.open = !this.open;
     },
     select(name) {
         this.active = name;
@@ -127,55 +75,53 @@ export default {
             }
         }
     },
-    sendEmail(){
-        axios.post('/mail/send',
-         {
-             subject: this.subject,
-             content: this.content
-         }
-        )
-        .then(function(response) {
-            console.log(response);
-        }).catch(function (error) {
-            console.log(error);
-        });
+    toggle(){
+        this.modal = !this.modal;
+    },
+    toggleMessage(message){
+        let self = this;
+        this.messageDiv = true;
+        this.message = message;
 
+        setTimeout(function(){
+            self.messageDiv = false;
+        }, 4000);
     }
   },
   mounted(){
-     this.setRoute();
+    this.setRoute();
+    this.$on('message', message => {
+        this.toggleMessage(message);
+    });
+
   },
   watch: {
     '$route': function(from, to) {
       this.setRoute();
     }
+  },
+  components:{
+      'contact-modal': Modal
   }
 };
 
 </script>
 
-<style>
-    .content-menu.ui.menu{
+<style scoped>
+    .content-menu.ui.menu,.app-message{
         margin: 10px;
     }
 
-    .contact-modal .ui.modal{
-        top: 5%;
-        left: 30%;
-        width: 40%;
-        height: 90%;
-        overflow: auto;
-    }
-
-    .contact-modal .header.contact-header{
-        background-color: #3cade0;
-    }
-
-    .close-icon{
-        float: right;
+    .contact-link{
         cursor: pointer;
     }
 
+    .fade-enter-active, .fade-leave-active {
+    transition: opacity 1s;
+    }
+    .fade-enter, .fade-leave-to {
+    opacity: 0;
+    }
 
 </style>
 
