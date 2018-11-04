@@ -140,7 +140,7 @@
             </sui-grid-column>
             </sui-grid>
 
-            <h2 is="sui-header">VSC</h2>
+            <h2 is="sui-header">VCS</h2>
 
             <sui-grid class="column-content"  :columns="2">
                 <sui-grid-column>
