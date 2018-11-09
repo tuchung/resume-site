@@ -15,6 +15,7 @@ class MailController extends Controller
                 $request->input('content')
             ));
         }catch( \Exception $e){
+            report($e);
             return response($e, 404);
         }
         return response('success', 200);

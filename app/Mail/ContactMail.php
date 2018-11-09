@@ -30,7 +30,7 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        return $this->from('tuthienchung@gmail.com')
+        return $this->from('tu.chung.mock@gmail.com')
                 ->to('tuthienchung@gmail.com')
                 ->subject($this->subject)
                 ->view('mail.message',['content' => $this->content]);
