@@ -5,12 +5,13 @@
         </a>
         <div class="paragraph">
            <h2 class="sui-header company">Agency Matrix: 2015-2018</h2>
-           <h4 class="sui-header role">Full-Stack Developer</h4>
-           <p>Responsibility Included:</p>
+           <h4 class="sui-header role">Team lead | Full-Stack Developer</h4>
+           <p>Serve in a client-direct communication role translating business requirement into viable, scalable, accessible solutions. Collaborate with dev-team to drive development and deployment on web platform.</p>
            <sui-list bulleted>
-                <sui-list-item>Developing and Maintenance Agency Matrix's insurance management system.</sui-list-item>
-                <sui-list-item>Lead Developer / Co-Creator of Benefit Matrix, its core and all of its extensions.</sui-list-item>
-                <sui-list-item>Lead Developer of the largely anticipated Commercial overhaul of the System.</sui-list-item>
+                <sui-list-item><strong>Introduce, design, and develop Benefit Matrix.</strong> A standalone software that utilize Agency Matrix data and its core components to allow clients to enroll and manage customers in benefit plans.</sui-list-item>
+                <sui-list-item><strong>Co-Design and co-develop Commercial Add-on.</strong> Overhaul the quote and customer registration system. Revitalize aged and under-utilize line of business datas and integrate them into the new implementation.</sui-list-item>
+                <sui-list-item><strong>Remodel and improve existing features.</strong> Such as: custom letter, customer import, reporting, setup, company reassignment, custom question hierarchy, and e- signature.
+</sui-list-item>
             </sui-list>
         </div>
 

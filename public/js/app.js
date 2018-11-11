@@ -65268,7 +65268,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n.column-content[data-v-594b97d8]{\n    margin: 10px;\n}\n", ""]);
+exports.push([module.i, "\n.column-content[data-v-594b97d8]{\n    margin: 10px;\n}\n\n", ""]);
 
 // exports
 
@@ -65320,6 +65320,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__resume_Education___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__resume_Education__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__resume_Experience__ = __webpack_require__(413);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__resume_Experience___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__resume_Experience__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__resume_Reference__ = __webpack_require__(1798);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__resume_Reference___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__resume_Reference__);
 //
 //
 //
@@ -65334,6 +65336,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+
 
 
 
@@ -65342,7 +65346,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     Name: 'Resume',
-    components: { profile: __WEBPACK_IMPORTED_MODULE_0__resume_Profile___default.a, skill: __WEBPACK_IMPORTED_MODULE_1__resume_Skill___default.a, education: __WEBPACK_IMPORTED_MODULE_2__resume_Education___default.a, experience: __WEBPACK_IMPORTED_MODULE_3__resume_Experience___default.a }
+    components: { profile: __WEBPACK_IMPORTED_MODULE_0__resume_Profile___default.a, skill: __WEBPACK_IMPORTED_MODULE_1__resume_Skill___default.a, education: __WEBPACK_IMPORTED_MODULE_2__resume_Education___default.a, experience: __WEBPACK_IMPORTED_MODULE_3__resume_Experience___default.a, reference: __WEBPACK_IMPORTED_MODULE_4__resume_Reference___default.a }
 });
 
 /***/ }),
@@ -65458,11 +65462,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     Name: 'Profile'
@@ -65484,12 +65483,12 @@ var render = function() {
         staticClass: "profile-ribbon",
         attrs: { color: "blue", ribbon: "" }
       },
-      [_vm._v("\n    Profile\n  ")]
+      [_vm._v("\n          Profile\n        ")]
     ),
     _vm._v(" "),
     _c("div", { staticClass: "paragraph" }, [
       _vm._v(
-        "\n     Professional, straightforward, and highly task driven software developer with years of\n     experience in software development and web development.\n     I have a strong understanding of php, javascript, css foundation and framework.\n     I am also well verse in database management such as MYSQL, SQLite, and MongoDB.\n     I am capable of learning new development language and style at a fast pace.\n     In addition, I have a solid leadership skill,  and work well with others regardless of experience.\n\n  "
+        "\nHighly task driven, innovative, software developer with years of experience in app development and web development and a strong understanding of LEMP Stack and it’s\nframeworks. Contributed to ground breaking solutions that meet business demand for agility, flexibility, and superb experience. \n        "
       )
     ])
   ])
@@ -65590,7 +65589,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n.list-label[data-v-6ee8fbcc]{\n    margin-left: 15px;\n}\n.profile-ribbon[data-v-6ee8fbcc]{\n    font-size: 20px;\n}\n.paragraph[data-v-6ee8fbcc]{\n    margin-top: 10px;\n}\n", ""]);
+exports.push([module.i, "\n.profile-ribbon[data-v-6ee8fbcc]{\n    font-size: 20px;\n}\n.paragraph[data-v-6ee8fbcc]{\n    margin-top: 10px;\n}\n", ""]);
 
 // exports
 
@@ -65601,6 +65600,17 @@ exports.push([module.i, "\n.list-label[data-v-6ee8fbcc]{\n    margin-left: 15px;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -65990,23 +66000,6 @@ var render = function() {
                         ])
                       ],
                       1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "sui-list-item",
-                      [
-                        _c("v-icon", {
-                          attrs: {
-                            color: "blue",
-                            name: "brands/react",
-                            scale: "2"
-                          }
-                        }),
-                        _c("strong", { staticClass: "list-label" }, [
-                          _vm._v("React")
-                        ])
-                      ],
-                      1
                     )
                   ],
                   1
@@ -66224,6 +66217,40 @@ var render = function() {
                         }),
                         _c("strong", { staticClass: "list-label" }, [
                           _vm._v("SQLite")
+                        ])
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("sui-header", { tag: "h2" }, [_vm._v("Server")]),
+        _vm._v(" "),
+        _c(
+          "sui-grid",
+          { staticClass: "column-content", attrs: { columns: 1 } },
+          [
+            _c(
+              "sui-grid-column",
+              [
+                _c(
+                  "sui-list",
+                  [
+                    _c(
+                      "sui-list-item",
+                      [
+                        _c("v-icon", {
+                          attrs: { color: "black", name: "server", scale: "2" }
+                        }),
+                        _c("strong", { staticClass: "list-label" }, [
+                          _vm._v("NGINX")
                         ])
                       ],
                       1
@@ -66564,6 +66591,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     Name: 'Experience'
@@ -66585,7 +66613,7 @@ var render = function() {
         staticClass: "profile-ribbon",
         attrs: { color: "yellow", ribbon: "" }
       },
-      [_vm._v("\n    Experiences\n  ")]
+      [_vm._v("\n          Experiences\n        ")]
     ),
     _vm._v(" "),
     _c(
@@ -66597,30 +66625,41 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("h4", { staticClass: "sui-header role" }, [
-          _vm._v("Full-Stack Developer")
+          _vm._v("Team lead | Full-Stack Developer")
         ]),
         _vm._v(" "),
-        _c("p", [_vm._v("Responsibility Included:")]),
+        _c("p", [
+          _vm._v(
+            "Serve in a client-direct communication role translating business requirement into viable, scalable, accessible solutions. Collaborate with dev-team to drive development and deployment on web platform."
+          )
+        ]),
         _vm._v(" "),
         _c(
           "sui-list",
           { attrs: { bulleted: "" } },
           [
             _c("sui-list-item", [
+              _c("strong", [
+                _vm._v("Introduce, design, and develop Benefit Matrix.")
+              ]),
               _vm._v(
-                "Developing and Maintenance Agency Matrix's insurance management system."
+                " A standalone software that utilize Agency Matrix data and its core components to allow clients to enroll and manage customers in benefit plans."
               )
             ]),
             _vm._v(" "),
             _c("sui-list-item", [
+              _c("strong", [
+                _vm._v("Co-Design and co-develop Commercial Add-on.")
+              ]),
               _vm._v(
-                "Lead Developer / Co-Creator of Benefit Matrix, its core and all of its extensions."
+                " Overhaul the quote and customer registration system. Revitalize aged and under-utilize line of business datas and integrate them into the new implementation."
               )
             ]),
             _vm._v(" "),
             _c("sui-list-item", [
+              _c("strong", [_vm._v("Remodel and improve existing features.")]),
               _vm._v(
-                "Lead Developer of the largely anticipated Commercial overhaul of the System."
+                " Such as: custom letter, customer import, reporting, setup, company reassignment, custom question hierarchy, and e- signature.\n"
               )
             ])
           ],
@@ -66655,7 +66694,17 @@ var render = function() {
     [
       _c("sui-grid-column", [_c("profile"), _vm._v(" "), _c("skill")], 1),
       _vm._v(" "),
-      _c("sui-grid-column", [_c("experience"), _vm._v(" "), _c("education")], 1)
+      _c(
+        "sui-grid-column",
+        [
+          _c("experience"),
+          _vm._v(" "),
+          _c("education"),
+          _vm._v(" "),
+          _c("reference")
+        ],
+        1
+      )
     ],
     1
   )
@@ -66915,8 +66964,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -66952,7 +66999,7 @@ var render = function() {
                 _c("sui-grid-column", { attrs: { width: 13 } }, [
                   _c("h3", [
                     _vm._v(
-                      "\n              I am of vietnamese/chinese descendent. I came to the United States when I was ten years old.\n            I attended and graduated from Georgia Gwinnett College in 2015. While I was there I worked for the college\n            as a technical support specialist for 2 years. Right out of school, I was hired to work as a full stack junior\n            software developer for Agency Matrix, an insurance management software company. One year later, I was promoted to\n            lead developer and were given a software extension to build, this later became the company benefit department and has grown\n            greatly in size. A year afterward, I was leading an internal team of three developer including myself. together\n            we continue to develop the benefit system and at the same time implementing the commerical overhaul of Agency Matrix. In addition,\n            I was nominated for Amazing Accomplishment in 2017 by WORK SOURCE GEORGIA.\n              "
+                      "\n            I am of vietnamese/chinese descendent. I came to the United States when I was ten years old.\n            I attended and graduated from Georgia Gwinnett College in 2015. I worked for the college\n            as a technical support specialist for 2 years. Right out of school, I was hired to work as a junior full stack\n            developer at Agency Matrix, an insurance management software company. In one year, I was promoted to\n            project lead developer for the benefit project. two year later, my team and I continue to develop for benefit project and the new commercial conversion project.\n            In addition, I was nominated for Amazing Accomplishment in 2017 by WORK SOURCE GEORGIA.\n            "
                     )
                   ])
                 ])
@@ -67099,6 +67146,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -67125,7 +67175,7 @@ var render = function() {
           { staticClass: "column-content" },
           [
             _c("sui-grid-row", [
-              _c("h3", [_vm._v("\n                build with\n            ")])
+              _c("h3", [_vm._v("\n                build with:\n            ")])
             ]),
             _vm._v(" "),
             _c(
@@ -67189,7 +67239,21 @@ var render = function() {
                 )
               ],
               1
-            )
+            ),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "You can follow me on GitHub and find the project source code here"
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("a", {
+                attrs: { href: "https://github.com/tuchung/resume-site" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("br")
           ],
           1
         )
@@ -86586,7 +86650,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n.contact-modal .ui.modal{\n    top: 5%;\n    left: 30%;\n    width: 40%;\n    height: 91%;\n    overflow: auto;\n}\n.contact-modal .header.contact-header{\n    background-color: #3cade0;\n}\n.close-icon{\n    float: right;\n    cursor: pointer;\n}\n\n\n", ""]);
+exports.push([module.i, "\n@media only screen and (min-width: 767px){\n.contact-modal .ui.modal{\n        top: 5%;\n        left: 30%;\n        width: 40%;\n        height: 91%;\n        overflow: auto;\n}\n}\n@media only screen and (max-width: 766px){\n.contact-modal .ui.modal{\n        width: 100%;\n}\n}\n.contact-modal .header.contact-header{\n        background-color: #3cade0;\n}\n.close-icon{\n        float: right;\n        cursor: pointer;\n}\n\n\n", ""]);
 
 // exports
 
@@ -87151,6 +87215,188 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 1795 */,
+/* 1796 */,
+/* 1797 */,
+/* 1798 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(1799)
+}
+var normalizeComponent = __webpack_require__(7)
+/* script */
+var __vue_script__ = __webpack_require__(1801)
+/* template */
+var __vue_template__ = __webpack_require__(1802)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-3034a994"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/resume/Reference.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3034a994", Component.options)
+  } else {
+    hotAPI.reload("data-v-3034a994", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 1799 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(1800);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(6)("52895635", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3034a994\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Reference.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-3034a994\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Reference.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 1800 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(5)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.profile-ribbon[data-v-3034a994]{\n    font-size: 20px;\n}\n.paragraph[data-v-3034a994]{\n    margin-top: 10px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 1801 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    Name: 'Reference'
+});
+
+/***/ }),
+/* 1802 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "sui-segment",
+    { attrs: { raised: "" } },
+    [
+      _c(
+        "sui-label",
+        {
+          tag: "a",
+          staticClass: "profile-ribbon",
+          attrs: { color: "teal", ribbon: "" }
+        },
+        [_vm._v("\n    Reference\n  ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "sui-list",
+        { attrs: { bulleted: "" } },
+        [
+          _c("sui-list-item", [
+            _vm._v("Nicholas Malacarne - "),
+            _c("strong", [_vm._v("Senior Software Developer")]),
+            _vm._v(" | (678) 235 - 5635")
+          ]),
+          _vm._v(" "),
+          _c("sui-list-item", [
+            _vm._v("Robert Benson - "),
+            _c("strong", [_vm._v("Software Developer")]),
+            _vm._v(" | (706) 255 - 4113")
+          ]),
+          _vm._v(" "),
+          _c("sui-list-item", [
+            _vm._v("Tyler Reed - "),
+            _c("strong", [_vm._v("Software Developer")]),
+            _vm._v(" | (770) 316 - 2403")
+          ])
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-3034a994", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

@@ -112,6 +112,8 @@ export default {
 </script>
 
 <style>
+
+@media only screen and (min-width: 767px){
     .contact-modal .ui.modal{
         top: 5%;
         left: 30%;
@@ -119,6 +121,13 @@ export default {
         height: 91%;
         overflow: auto;
     }
+}
+@media only screen and (max-width: 766px){
+    .contact-modal .ui.modal{
+        width: 100%;
+    }
+}
+
 
     .contact-modal .header.contact-header{
         background-color: #3cade0;

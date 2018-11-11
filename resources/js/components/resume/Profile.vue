@@ -5,13 +5,8 @@
         </a>
 
         <div class="paragraph">
-           Professional, straightforward, and highly task driven software developer with years of
-           experience in software development and web development.
-           I have a strong understanding of php, javascript, css foundation and framework.
-           I am also well verse in database management such as MYSQL, SQLite, and MongoDB.
-           I am capable of learning new development language and style at a fast pace.
-           In addition, I have a solid leadership skill,  and work well with others regardless of experience.
-
+Highly task driven, innovative, software developer with years of experience in app development and web development and a strong understanding of LEMP Stack and it’s
+frameworks. Contributed to ground breaking solutions that meet business demand for agility, flexibility, and superb experience. 
         </div>
 
 

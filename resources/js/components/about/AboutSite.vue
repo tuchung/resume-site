@@ -5,7 +5,7 @@
             <sui-grid  class="column-content">
                 <sui-grid-row>
                 <h3>
-                    build with
+                    build with:
                 </h3>
 
                 </sui-grid-row>
@@ -16,6 +16,9 @@
                         <sui-list-item><v-icon color="blue" name="brands/css3" scale="2" /><strong class='list-label'>Semantic UI</strong></sui-list-item>
                 </sui-list>
                 </sui-grid-row>
+                <p>You can follow me on GitHub and find the project source code here</p>
+                <p> <a href="https://github.com/tuchung/resume-site"></a></p>
+                <br>
             </sui-grid>
 
         </div>

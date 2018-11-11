@@ -8,6 +8,7 @@
     <sui-grid-column>
         <experience></experience>
         <education></education>
+        <reference></reference>
     </sui-grid-column>
   </sui-grid>
 </template>
@@ -17,10 +18,11 @@ import profile from './resume/Profile'
 import skill from './resume/Skill'
 import education from './resume/Education'
 import experience from './resume/Experience'
+import reference from './resume/Reference'
 
 export default {
     Name: 'Resume',
-    components: { profile, skill, education, experience }
+    components: { profile, skill, education, experience, reference }
 };
 </script>
 
@@ -28,5 +30,6 @@ export default {
     .column-content{
         margin: 10px;
     }
+
 </style>
 

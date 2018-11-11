@@ -60,9 +60,6 @@
                     <sui-list-item>
                             <v-icon color="green" name="brands/vuejs" scale="2" /><strong class='list-label'>VueJS</strong>
                     </sui-list-item>
-                    <sui-list-item>
-                            <v-icon color="blue" name="brands/react" scale="2" /><strong class='list-label'>React</strong>
-                    </sui-list-item>
                 </sui-list>
 
             </sui-grid-column>
@@ -140,6 +137,20 @@
             </sui-grid-column>
             </sui-grid>
 
+            <h2 is="sui-header">Server</h2>
+
+            <sui-grid class="column-content"  :columns="1">
+                <sui-grid-column>
+                <sui-list>
+                    <!-- As components -->
+                    <sui-list-item>
+                                <v-icon color="black" name="server" scale="2" /><strong class='list-label'>NGINX</strong>
+                    </sui-list-item>
+                </sui-list>
+
+            </sui-grid-column>
+            </sui-grid>
+
             <h2 is="sui-header">VCS</h2>
 
             <sui-grid class="column-content"  :columns="2">
@@ -168,9 +179,6 @@ export default {
 </script>
 
 <style scoped>
-    .list-label{
-        margin-left: 15px;
-    }
 
     .profile-ribbon{
         font-size: 20px;
