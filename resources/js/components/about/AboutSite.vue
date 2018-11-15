@@ -16,8 +16,7 @@
                         <sui-list-item><v-icon color="blue" name="brands/css3" scale="2" /><strong class='list-label'>Semantic UI</strong></sui-list-item>
                 </sui-list>
                 </sui-grid-row>
-                <p>You can follow me on GitHub and find the project source code here</p>
-                <p> <a href="https://github.com/tuchung/resume-site"></a></p>
+                <sui-grid-row>You can follow me on GitHub and find the project source code here:&nbsp;&nbsp;&nbsp;<a href="https://github.com/tuchung/resume-site">https://github.com/tuchung/resume-site</a></sui-grid-row>
                 <br>
             </sui-grid>
 
